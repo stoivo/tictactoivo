@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -27,6 +28,10 @@ group :development do
   gem 'spring'
   gem 'rack-mini-profiler'
   gem 'thin'
+
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
 end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
