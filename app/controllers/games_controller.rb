@@ -10,22 +10,22 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    # @plots = @game.plots.order("vertical asc").order("horizontal asc")
+    @plots = @game.plots.order("vertical asc").order("horizontal asc")
 
-    # @plots2D = []
-    # @game.rows.times do |j|
-    #   @plots2D[j] = []
-    #   row = @game.plots.where(horizontal: j).order("vertical asc")
-    #   row.each_index do |i|
-    #     @plots2D[j] << row[i]
-    #   end
-    # end
-    # # lag en 2D array
-    # # [
-    # #   [row1 colom1,row1 colom2,row1 colom3],
-    # #   [row2 colom1,row2 colom2,row2 colom3],
-    # #   [row3 colom1,row3 colom2,row3 colom3]
-    # # ]
+    @plots2D = []
+    @game.rows.times do |j|
+      @plots2D[j] = []
+      row = @game.plots.where(horizontal: j).order("vertical asc")
+      row.each_index do |i|
+        @plots2D[j] << row[i]
+      end
+    end
+    # lag en 2D array
+    # [
+    #   [row1 colom1,row1 colom2,row1 colom3],
+    #   [row2 colom1,row2 colom2,row2 colom3],
+    #   [row3 colom1,row3 colom2,row3 colom3]
+    # ]
   end
 
   # GET /games/new

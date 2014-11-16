@@ -1,9 +1,9 @@
 class Game < ActiveRecord::Base
-  belongs_to :start_by, :class_name => "User"
-  belongs_to :winner, :class_name => "User"
-  belongs_to :losser, :class_name => "User"
-  belongs_to :first_player, :class_name => "User"
-  belongs_to :secound_player, :class_name => "User"
+  # belongs_to :start_by, :class_name => "User"
+  # belongs_to :winner, :class_name => "User"
+  # belongs_to :losser, :class_name => "User"
+  # belongs_to :first_player, :class_name => "User"
+  # belongs_to :secound_player, :class_name => "User"
   has_many :plots, :class_name => "GamePlot"
 
   after_create :create_game_plots

@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116221235) do
+ActiveRecord::Schema.define(version: 20141116222420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "game_plots", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "vertical"
+    t.integer  "horizontal"
+    t.integer  "selected_by_id"
+    t.integer  "selected_turn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_plots", ["horizontal"], name: "index_game_plots_on_horizontal", using: :btree
+  add_index "game_plots", ["vertical"], name: "index_game_plots_on_vertical", using: :btree
 
   create_table "games", force: true do |t|
     t.integer  "started_by_id"
