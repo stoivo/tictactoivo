@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Started by:</strong>
+  <%= @game.started_by_id %>
+</p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @game.winner_id %>
+</p>
+
+<p>
+  <strong>Losser:</strong>
+  <%= @game.losser_id %>
+</p>
+
+<p>
+  <strong>First player:</strong>
+  <%= @game.first_player_id %>
+</p>
+
+<p>
+  <strong>Secound player:</strong>
+  <%= @game.secound_player_id %>
+</p>
+
+<p>
+  <strong>Turn:</strong>
+  <%= @game.turn %>
+</p>
+
+<p>
+  <strong>Rows:</strong>
+  <%= @game.rows %>
+</p>
+
+<p>
+  <strong>Columns:</strong>
+  <%= @game.columns %>
+</p>
+
+<p>
+  <strong>Length to win:</strong>
+  <%= @game.length_to_win %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @game.mode %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @game.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @game.end_at %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

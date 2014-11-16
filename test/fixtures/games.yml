@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  started_by_id: 1
+  winner_id: 1
+  losser_id: 1
+  first_player_id: 1
+  secound_player_id: 1
+  turn: 1
+  rows: 1
+  columns: 1
+  length_to_win: 1
+  mode: MyString
+  start_at: 2014-11-16
+  end_at: 2014-11-16
+
+two:
+  started_by_id: 1
+  winner_id: 1
+  losser_id: 1
+  first_player_id: 1
+  secound_player_id: 1
+  turn: 1
+  rows: 1
+  columns: 1
+  length_to_win: 1
+  mode: MyString
+  start_at: 2014-11-16
+  end_at: 2014-11-16
