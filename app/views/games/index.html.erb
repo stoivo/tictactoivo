@@ -1,6 +1,9 @@
-<h1>Listing games</h1>
+<div class="row">
+  <div class="col-md-3"><div class="btn btn-default"><%= link_to 'New Game', new_game_path %></div></div>
+  <div class="col-md-9"><h1>Listing games</h1></div>
+</div>
 
-<table>
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <th>Started by</th>
@@ -34,14 +37,15 @@
         <td><%= game.mode %></td>
         <td><%= game.start_at %></td>
         <td><%= game.end_at %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', game, class: "btn btn-link btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_game_path(game), class: "btn btn-link btn-sm" %></td>
+        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Game', new_game_path %>
+

@@ -1,0 +1,20 @@
+<table id="game">
+  <% @plots2D.each do |row| %>
+    <tr>
+      <% row.each do |plot| %>
+        <td style="width:100px; height:100px; border: 2px black solid;" >
+          <p>ID:<%= plot.id %></p>
+          <p>
+            <%= plot.vertical %>
+            <%= plot.horizontal %>
+          </p>
+          <% #if plot.selected_by %>
+            <p>
+              <%= 'username' %>
+            </p>
+          <% # end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
