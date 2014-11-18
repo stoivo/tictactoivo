@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
   validates :epost, length: {in: 10..100}
   validates :username, length: {maximum: 26}
 
-
 end
