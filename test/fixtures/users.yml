@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  epost: MyString
+  password_digest: MyString
+  first_login: 2014-11-18 20:32:12
+  last_login: 2014-11-18 20:32:12
+
+two:
+  username: MyString
+  epost: MyString
+  password_digest: MyString
+  first_login: 2014-11-18 20:32:12
+  last_login: 2014-11-18 20:32:12
