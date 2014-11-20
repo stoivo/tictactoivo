@@ -38,15 +38,23 @@
           <li><a href="#">Messages <span class="badge">3</span></a></li>
           <li><a href="#">Link</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, <%= false ? current_user : "Gust" %> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, <%= current_user ? current_user.username : "Gust" %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
-              <li><%= link_to "Create new User", new_user_path %></li>
-              <li><%= link_to "List all you fiendes", users_path %></li>
+              <% if current_user %>
+                <li><%= link_to "#{current_user.username}, do you want to log in again?", new_session_path %></li>
+                <li><%= link_to "List all you fiendes", users_path %></li>
+                <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                <li><%= link_to "Log out", logout_path %></li>
+              <% else %>
+                <li><%= link_to "Create new User", signup_path %></li>
+                <li><%= link_to "Login", login_path %></li>
+                <li><%= link_to "List all you fiendes", users_path %></li>
+              <% end %>
             </ul>
           </li>
           <li><a href="#">   </a></li>
@@ -54,7 +62,18 @@
       </div>
     </div>
   <div class="container">
-
+    <% if !flash.empty? %>
+      <div class="row">
+        <div class="col-md-12">
+          <% flash.each do |name, msg| %>
+            <div class="alert alert-dismissable alert-<%= name == 'notice' ? 'success': 'warning' %>">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong><%= msg %></strong>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
     <%= yield %>
   </div>
