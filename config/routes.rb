@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get :new_password_reset
     get :edit_password
     post :reset_one_user_by_email
+    patch :update_only_password
   end
 
   resources :game_plots

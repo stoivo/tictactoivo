@@ -34,9 +34,9 @@ class UsersController < ApplicationController
   def new_password_reset
   end
   def reset_one_user_by_email
-    user = User.where(epost: params[:epost]).first
-    if user
-      user.send_password_reset
+    @user = User.where(epost: params[:epost]).first
+    if @user
+      @user.send_password_reset
       redirect_to games_path, notice: "An Email sent to you mail address"
     else
       redirect_to games_path, notice: "No uses with that email"
@@ -44,8 +44,17 @@ class UsersController < ApplicationController
 
   end
   def edit_password
-   params[:token]
-
+    @user = User.find_by_password_reset_token! params[:user_id]
+  end
+  def update_only_password
+    @user = User.find_by_password_reset_token! params[:user_id]
+    if @user.password_reset_sent_at < 2.hour.ago
+      redirect_to user_new_password_reset_path(0), alert: "Password reset has expired"
+    elsif @user.update_attributes user_params :password
+      redirect_to games_path, notice: "Password has been reset!"
+    else
+      render :edit_password
+    end
   end
   def set_user
     @user = User.find(params[:id])
@@ -57,6 +66,11 @@ class UsersController < ApplicationController
         :username,
         :epost,
         :admin
+      )
+    elsif type == :password
+      params.require(:user).permit(
+        :password,
+        :password_confirmation
       )
     else
       params.require(:user).permit(

@@ -20,12 +20,6 @@ class GamesController < ApplicationController
         @plots2D[j] << row[i]
       end
     end
-    # lag en 2D array
-    # [
-    #   [row1 colom1,row1 colom2,row1 colom3],
-    #   [row2 colom1,row2 colom2,row2 colom3],
-    #   [row3 colom1,row3 colom2,row3 colom3]
-    # ]
   end
 
   # GET /games/new
