@@ -31,6 +31,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def new_password_reset
+  end
+  def reset_one_user_by_email
+    user = User.where(epost: params[:epost]).first
+    if user
+      user.send_password_reset
+      redirect_to games_path, notice: "An Email sent to you mail address"
+    else
+      redirect_to games_path, notice: "No uses with that email"
+    end
+
+  end
+  def edit_password
+   params[:token]
+
+  end
   def set_user
     @user = User.find(params[:id])
   end

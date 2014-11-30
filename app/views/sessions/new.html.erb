@@ -8,6 +8,7 @@
       <%= text_field_tag :epost, params[:epost], class: "form-control" %>
     </div>
   </div>
+
   <div class="form-group">
     <%= label_tag :password, nil, class: "control-label col-sm-3" %>
     <div class="col-sm-7">
@@ -15,8 +16,11 @@
     </div>
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-7">
+    <div class="col-sm-offset-3 col-sm-2">
       <%= submit_tag "Log in Now",  class: "btn btn-warning"%>
+    </div>
+    <div class="col-sm-2">
+      <%= link_to "Forgotten password?", user_new_password_reset_path(0), class: "btn btn-warning" %>
     </div>
   </div>
 

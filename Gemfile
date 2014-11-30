@@ -33,6 +33,14 @@ group :development do
   gem 'pry-doc'
   gem 'pry-rails'
 end
+
+gem 'rspec-rails', :group => [:test, :development]
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

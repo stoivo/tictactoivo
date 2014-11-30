@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
 
   resources :sessions
-  resources :users
+  resources :users do
+    get :new_password_reset
+    get :edit_password
+    post :reset_one_user_by_email
+  end
 
   resources :game_plots
 
